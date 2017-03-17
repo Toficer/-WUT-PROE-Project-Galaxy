@@ -24,6 +24,7 @@ private:
 	static int galaxy_count;
 	static int countGalaxies();
 
+	static Star Proxima_Centauri;
 	Star sol;
 	Planet *inhabited_planet;
 	Moon *interesting_moon;

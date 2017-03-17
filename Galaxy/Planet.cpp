@@ -211,21 +211,18 @@ Planet::~Planet() {
 
 bool Planet::operator==(const Planet &p) {
 
-	int result=0;
-
 	if (p.interesting_moon_count == interesting_moon_count
 		&& p.planet_age == planet_age && p.p_diameter_km == p_diameter_km
 		&& p.moon_count == moon_count && p.planet_name == planet_name) 
 	{
 		
 		for (int i = 0; i < interesting_moon_count; i++) {
-			if (p.interesting_moons[i] == interesting_moons[i]) {
-				result++;
+			if (!(p.interesting_moons[i] == interesting_moons[i])) {
+				return false;
 			}
 		}
-		if (result = interesting_moon_count) return true;
+		return true;
 	}
-	else return false;
 }
 
 
