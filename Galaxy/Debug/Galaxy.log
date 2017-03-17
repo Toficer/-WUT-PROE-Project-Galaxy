@@ -1,5 +1,3 @@
-﻿  Planet.cpp
-c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\planet.cpp(326): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\planet.cpp(226): warning C4715: 'Planet::operator==': not all control paths return a value
+﻿  ProjectGalaxy.cpp
   Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Debug\Galaxy.exe
   Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Debug\Galaxy.pdb (Partial PDB)

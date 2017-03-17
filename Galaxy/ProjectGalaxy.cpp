@@ -21,6 +21,18 @@ void classTestingFunction() {
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
 	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
+	Galaxy *andromeda = new Galaxy();
+	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
+	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
+	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
+	static Galaxy NGC3077;
+	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
+	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
+	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
+	delete andromeda;
+	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
+	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
+	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
 }
 
 void operatorTestingFunction() {
