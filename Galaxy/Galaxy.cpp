@@ -7,7 +7,7 @@ using namespace std;
 
 int Galaxy::galaxy_count = 0;
 
-int Galaxy::countGalaxies(){
+int Galaxy::countGalaxies() {
 	return galaxy_count;
 }
 
@@ -133,15 +133,15 @@ Galaxy::Galaxy(int star_count) {
 	inhabited_planet = new Planet;
 
 #ifdef _DEBUG
-	cout << "inhabited_planet (galaxy) created." << endl << endl; //debug-only message
+	cout << "inhabited_planet (galaxy) created. SC: " << star_count << endl << endl; //debug-only message
 #endif
 
 	interesting_moon = new Moon;
 
 #ifdef _DEBUG
-	cout << "interesting_moon (galaxy) created." << endl << endl; //debug-only message
+	cout << "interesting_moon (galaxy) created. SC: " << star_count << endl << endl; //debug-only message
 
-	cout << "Galaxy created." << endl;
+	cout << "Galaxy created. SC: " << star_count << endl;
 #endif
 
 	galaxy_count++;
@@ -156,17 +156,17 @@ Galaxy::~Galaxy() {
 	delete inhabited_planet;
 
 #ifdef _DEBUG
-	cout << "inhabited_planet (galaxy) deleted." << endl << endl; //debug-only message
+	cout << "inhabited_planet (galaxy) deleted. SC: " << star_count << endl << endl; //debug-only message
 #endif
 
 	delete interesting_moon;
 
 #ifdef _DEBUG
-	cout << "interesting_moon (galaxy) deleted." << endl << endl; //debug-only message
+	cout << "interesting_moon (galaxy) deleted. SC: " << star_count << endl << endl; //debug-only message
 #endif
 
 #ifdef _DEBUG
-	cout << "Galaxy deleted." << endl << endl; //debug-only message
+	cout << "Galaxy deleted. SC: " << star_count << endl << endl; //debug-only message
 #endif
 
 	galaxy_count--;

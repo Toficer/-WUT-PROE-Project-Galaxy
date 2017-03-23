@@ -17,15 +17,15 @@ void classTestingFunction() {
 
 	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
-	Galaxy milky_way;
+	Galaxy milky_way(1);
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
 	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
-	Galaxy *andromeda = new Galaxy();
+	Galaxy *andromeda = new Galaxy(2);
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
 	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
-	static Galaxy NGC3077;
+	static Galaxy NGC3077(3);
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
 	cout << "galaxy_count: " << Galaxy::countGalaxies() << endl;
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
@@ -68,7 +68,11 @@ void operatorTestingFunction() {
 	cout << ">Result: " << (milky_way.sol.interesting_planets[0] > milky_way.inhabited_planet[0]) << " | Expected: 1" << endl;
 
 	Planet test = (milky_way.sol.interesting_planets[0] + milky_way.inhabited_planet[0]);
+	cout << "+test: " << milky_way.sol.interesting_planets[0] << endl;
+	cout << "+test: " << milky_way.inhabited_planet[0] << endl;
 	cout << "+Result: " << test << endl << " | Expected: 0, 15119.05259873847 ~ 15120, 3" << endl;
+	cout << "+test: " << milky_way.sol.interesting_planets[0] << endl;
+	cout << "+test: " << milky_way.inhabited_planet[0] << endl;
 
 
 	cout << endl << endl << "--------------------------------------------------------" << endl << endl;
@@ -80,9 +84,9 @@ int main() {
 	int test;
 	classTestingFunction();
 
-	#ifdef _DEBUG
-		operatorTestingFunction();
-	#endif
+#ifdef _DEBUG
+	operatorTestingFunction();
+#endif
 
 	cin >> test;
 
