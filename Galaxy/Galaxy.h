@@ -2,9 +2,10 @@
 class Star;
 class Planet;
 class Moon;
+class AstronomicalObject;
 
 
-class Galaxy
+class Galaxy: public AstronomicalObject
 {
 public:
 
@@ -12,10 +13,8 @@ public:
 	Galaxy(const Galaxy &g);
 	~Galaxy();
 
-private:
-	int star_count; //in M stars
+protected:
 	int galaxy_age; //in M Earth ears
-	int diameter_ly;
 	static int galaxy_count;
 	static int countGalaxies();
 

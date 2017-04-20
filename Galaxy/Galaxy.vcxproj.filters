@@ -30,6 +30,9 @@
     <ClCompile Include="ProjectGalaxy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AstronomicalObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Galaxy.h">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Moon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AstronomicalObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

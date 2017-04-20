@@ -3,6 +3,7 @@
 #include "Star.h"
 #include "Planet.h"
 #include "Moon.h"
+#include "AstronomicalObject.h"
 #include "Galaxy.h"
 
 using namespace std;
@@ -16,6 +17,7 @@ ostream& operator <<(ostream &pout, Planet &p) {
 int main() {
 
 	int test;
+	Galaxy galaxy;
 	cin >> test;
 
 	return 0;
