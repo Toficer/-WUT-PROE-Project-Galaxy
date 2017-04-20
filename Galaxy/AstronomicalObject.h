@@ -5,7 +5,7 @@ class AstronomicalObject
 {
 public:
 
-	AstronomicalObject();
+	AstronomicalObject(int star_count = 317000);
 
 protected:
 	int star_count; //in M stars

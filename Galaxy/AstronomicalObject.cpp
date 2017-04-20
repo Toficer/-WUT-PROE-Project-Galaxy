@@ -2,9 +2,9 @@
 #include "AstronomicalObject.h"
 using namespace std;
 
-AstronomicalObject::AstronomicalObject() {
+AstronomicalObject::AstronomicalObject(int star_count) {
 
-	star_count = 251000;
+	this->star_count = star_count;
 	diameter_ly = 150000;
 
 #ifdef _DEBUG

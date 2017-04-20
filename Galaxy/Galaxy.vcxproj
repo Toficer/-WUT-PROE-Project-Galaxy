@@ -114,6 +114,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AstronomicalObject.cpp" />
+    <ClCompile Include="CosmicVoid.cpp" />
     <ClCompile Include="Galaxy.cpp" />
     <ClCompile Include="Moon.cpp" />
     <ClCompile Include="Planet.cpp" />
@@ -122,6 +123,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AstronomicalObject.h" />
+    <ClInclude Include="CosmicVoid.h" />
     <ClInclude Include="Galaxy.h" />
     <ClInclude Include="Moon.h" />
     <ClInclude Include="Planet.h" />

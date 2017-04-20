@@ -5,6 +5,7 @@
 #include "Moon.h"
 #include "AstronomicalObject.h"
 #include "Galaxy.h"
+#include "CosmicVoid.h"
 
 using namespace std;
 
@@ -18,6 +19,7 @@ int main() {
 
 	int test;
 	Galaxy galaxy;
+	CosmicVoid cvoid;
 	cin >> test;
 
 	return 0;
