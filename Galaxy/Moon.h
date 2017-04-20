@@ -2,14 +2,10 @@
 
 class Moon
 {
-	friend void classTestingFunction();
-	friend void operatorTestingFunction();
 public:
 
 	Moon();
 	Moon(const Moon &m);
-	Moon(int m_diameter_km, bool humans_visited);
-	Moon(int m_diameter_km);
 	~Moon();
 
 	//---METHODS:

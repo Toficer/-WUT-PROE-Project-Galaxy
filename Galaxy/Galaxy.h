@@ -6,15 +6,10 @@ class Moon;
 
 class Galaxy
 {
-	friend void classTestingFunction();
-	friend void operatorTestingFunction();
 public:
 
 	Galaxy();
 	Galaxy(const Galaxy &g);
-	Galaxy(int star_count, int age, int diameter_ly);
-	Galaxy(int star_count, int age);
-	Galaxy(int star_count);
 	~Galaxy();
 
 private:

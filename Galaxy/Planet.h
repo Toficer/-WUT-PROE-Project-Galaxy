@@ -4,17 +4,10 @@ class Moon;
 
 class Planet
 {
-	friend void classTestingFunction();
-	friend void operatorTestingFunction();
 public:
 
 	Planet();
 	Planet(const Planet &p);
-	Planet(int planet_age, int p_diameter_km, int moon_count, int interesting_moon_count, std::string planet_name);
-	Planet(int planet_age, int p_diameter_km, int moon_count, int interesting_moon_count);
-	Planet(int planet_age, int p_diameter_km, int moon_count);
-	Planet(int planet_age, int p_diameter_km);
-	Planet(int planet_age);
 	~Planet();
 
 	//---METHODS:

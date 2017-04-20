@@ -40,36 +40,6 @@ Moon::Moon(const Moon &m) {
 }
 
 
-//------------------------------------------------------------------------------------------NEXT CONSTRUCTOR
-
-
-Moon::Moon(int m_diameter_km, bool humans_visited) {
-
-	this->m_diameter_km = m_diameter_km;
-	this->humans_visited = humans_visited;
-
-#ifdef _DEBUG
-	cout << "Moon created." << endl; //debug-only message
-#endif
-
-}
-
-
-//------------------------------------------------------------------------------------------NEXT CONSTRUCTOR
-
-
-Moon::Moon(int m_diameter_km) {
-
-	this->m_diameter_km = m_diameter_km;
-	humans_visited = 1;
-
-#ifdef _DEBUG
-	cout << "Moon created." << endl; //debug-only message
-#endif
-
-}
-
-
 //------------------------------------------------------------------------------------------DESTRUCTOR
 
 
