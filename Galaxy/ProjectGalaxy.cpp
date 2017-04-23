@@ -16,12 +16,21 @@ ostream& operator <<(ostream &pout, Planet &p) {
 	return pout;
 }
 
+//Main object stream operators
+
+ostream& operator <<(ostream &gout, Galaxy &g) {
+	string output = g.toString();
+	gout << output;
+	return gout;
+}
+
 int main() {
 
 	int test;
 	{
 		Galaxy galaxy;
-		CosmicVoid cvoid;
+		cout << galaxy;
+		//CosmicVoid cvoid;
 		SpiralGalaxy sgalaxy;
 	}
 	cin >> test;

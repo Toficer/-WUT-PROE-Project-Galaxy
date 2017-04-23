@@ -1,3 +1,10 @@
 ﻿  ProjectGalaxy.cpp
+  Galaxy.cpp
+  AstronomicalObject.cpp
+  Generating Code...
+  Compiling...
+  SpiralGalaxy.cpp
+  CosmicVoid.cpp
+  Generating Code...
   Galaxy.vcxproj -> C:\Users\tofic\Documents\Visual Studio 2015\Projects\Galaxy\Debug\Galaxy.exe
   Galaxy.vcxproj -> C:\Users\tofic\Documents\Visual Studio 2015\Projects\Galaxy\Debug\Galaxy.pdb (Partial PDB)

@@ -12,6 +12,8 @@ public:
 	Galaxy();
 	Galaxy(const Galaxy &g);
 	~Galaxy();
+	friend std::ostream& operator <<(std::ostream &gout, Galaxy &g);
+	virtual std::string toString();
 
 protected:
 	int galaxy_age; //in M Earth ears
