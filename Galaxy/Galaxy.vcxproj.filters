@@ -36,6 +36,9 @@
     <ClCompile Include="CosmicVoid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SpiralGalaxy.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Galaxy.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CosmicVoid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpiralGalaxy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -6,6 +6,7 @@
 #include "AstronomicalObject.h"
 #include "Galaxy.h"
 #include "CosmicVoid.h"
+#include "SpiralGalaxy.h"
 
 using namespace std;
 
@@ -18,8 +19,11 @@ ostream& operator <<(ostream &pout, Planet &p) {
 int main() {
 
 	int test;
-	Galaxy galaxy;
-	CosmicVoid cvoid;
+	{
+		Galaxy galaxy;
+		CosmicVoid cvoid;
+		SpiralGalaxy sgalaxy;
+	}
 	cin >> test;
 
 	return 0;
