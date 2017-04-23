@@ -18,6 +18,9 @@ public:
 
 	CosmicVoid(const CosmicVoid &c);
 
+	friend std::ostream& operator <<(std::ostream &vout, CosmicVoid &v);
+	virtual std::string toString();
+
 private:
 	bool alien_presence;
 };
