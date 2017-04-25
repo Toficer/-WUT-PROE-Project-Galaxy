@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <vector>
 class Moon;
 
 class Planet
@@ -33,5 +34,5 @@ private:
 	int moon_count, interesting_moon_count;
 	std::string planet_name;
 
-	Moon *interesting_moons;
+	std::vector <Moon> interesting_moons;
 };

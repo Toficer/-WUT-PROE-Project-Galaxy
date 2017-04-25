@@ -7,6 +7,7 @@
 #include "Galaxy.h"
 #include "CosmicVoid.h"
 #include "SpiralGalaxy.h"
+#include <vector>
 
 using namespace std;
 
@@ -38,16 +39,20 @@ ostream& operator <<(ostream &sgout, SpiralGalaxy &sg) {
 
 int main() {
 
-	int test;
+	int pause;
 	{
+		vector <AstronomicalObject*> objects;
 		Galaxy galaxy;
-		cout << galaxy << endl;
 		CosmicVoid cvoid;
-		cout << cvoid << endl;
 		SpiralGalaxy sgalaxy;
-		cout << sgalaxy << endl;
+		objects.push_back(&galaxy);
+		objects.push_back(&cvoid);
+		objects.push_back(&sgalaxy);
+		cout << objects[0]->toString() << endl;
+		cout << objects[1]->toString() << endl;
+		cout << objects[2]->toString() << endl;
 	}
-	cin >> test;
+	cin >> pause;
 
 	return 0;
 }

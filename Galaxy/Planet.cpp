@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <math.h>
+#include <vector>
 #include "Planet.h"
 #include "Moon.h"
 using namespace std;
@@ -21,7 +22,7 @@ Planet::Planet() {
 	moon_count = 1;
 	planet_name = "XZ8721";
 
-	interesting_moons = new Moon[interesting_moon_count];
+	interesting_moons.push_back(Moon());
 
 #ifdef _DEBUG
 	cout << "interesting_moons (planet) created." << endl; //debug-only message
@@ -41,9 +42,8 @@ Planet::Planet(const Planet &p) {
 	moon_count = p.moon_count;
 
 	if (interesting_moon_count != 0) {
-		interesting_moons = new Moon[interesting_moon_count];
 		for (int i = 0; i < interesting_moon_count; i++) {
-			interesting_moons[i] = p.interesting_moons[i];
+			interesting_moons.push_back(p.interesting_moons[i]);
 		}
 
 #ifdef _DEBUG
@@ -63,7 +63,7 @@ Planet::Planet(const Planet &p) {
 
 Planet::~Planet() {
 
-	delete []interesting_moons;
+	interesting_moons.clear();
 #ifdef _DEBUG
 	cout << "interesting_moons (planet) deleted." << endl; //debug-only message
 	cout << "Planet deleted." << endl;
@@ -74,21 +74,21 @@ Planet::~Planet() {
 //------------------------------------------------------------------------------------------OPERATORS
 
 
-bool Planet::operator==(const Planet &p) {
-
-	if (p.interesting_moon_count == interesting_moon_count
-		&& p.planet_age == planet_age && p.p_diameter_km == p_diameter_km
-		&& p.moon_count == moon_count && p.planet_name == planet_name) 
-	{
-		
-		for (int i = 0; i < interesting_moon_count; i++) {
-			if (!(p.interesting_moons[i] == interesting_moons[i])) {
-				return false;
-			}
-		}
-		return true;
-	}
-}
+//bool Planet::operator==(const Planet &p) {
+//
+//	if (p.interesting_moon_count == interesting_moon_count
+//		&& p.planet_age == planet_age && p.p_diameter_km == p_diameter_km
+//		&& p.moon_count == moon_count && p.planet_name == planet_name) 
+//	{
+//		
+//		for (int i = 0; i < interesting_moon_count; i++) {
+//			if (!(p.interesting_moons[i] == interesting_moons[i])) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
+//}
 
 
 //------------------------------------------------------------------------------------------NEXT OPERATOR
@@ -102,14 +102,12 @@ Planet& Planet::operator=(const Planet &p) {
 	moon_count = p.moon_count;
 	planet_name = p.planet_name;
 
-	if (interesting_moons != nullptr)
-	delete[]interesting_moons;
+	interesting_moons.clear();
 
-	interesting_moons = new Moon[interesting_moon_count];
-
-	for (int i = 0; i < interesting_moon_count; i++) {
-
-		interesting_moons[i] = p.interesting_moons[i];
+	if (interesting_moon_count != 0) {
+		for (int i = 0; i < interesting_moon_count; i++) {
+			interesting_moons.push_back(p.interesting_moons[i]);
+		}
 	}
 
 	return *this;
@@ -184,7 +182,7 @@ bool Planet::operator >(Planet &p) {
 Planet Planet::operator +(const Planet &p) {
 
 	Planet result;
-	delete []result.interesting_moons;
+	result.interesting_moons.clear();
 
 	result.interesting_moon_count = p.interesting_moon_count + interesting_moon_count;
 	result.planet_age = 0;
@@ -192,16 +190,14 @@ Planet Planet::operator +(const Planet &p) {
 	result.moon_count = p.moon_count + moon_count;
 	result.planet_name = "Merged planets";
 
-	result.interesting_moons = new Moon[result.interesting_moon_count];
-
 	for (int i = 0; i < interesting_moon_count; i++) {
 
-		result.interesting_moons[i] = interesting_moons[i];
+		result.interesting_moons.push_back(interesting_moons[i]);
 	}
 
 	for (int i = 0; i < p.interesting_moon_count; i++) {
 
-		result.interesting_moons[i + interesting_moon_count] = p.interesting_moons[i];
+		result.interesting_moons.push_back(p.interesting_moons[i]);
 	}
 
 	return result;

@@ -1,5 +1,6 @@
 #pragma once
 class Planet;
+#include <vector>
 
 class Star
 {
@@ -14,5 +15,5 @@ private:
 	int temperature; //on the surface
 	int diameter_km;
 
-	Planet *interesting_planets;
+	std::vector <Planet> interesting_planets;
 };

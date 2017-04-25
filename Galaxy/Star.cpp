@@ -15,11 +15,14 @@ Star::Star() {
 	diameter_km = 1400000;
 
 	if (planet_count != 0) {
-	interesting_planets = new Planet[interesting_planet_count];
-
+		int i=0;
+		do {
+			interesting_planets.push_back(Planet());
 #ifdef _DEBUG
-	cout << "interesting_planets (star) created." << endl; //debug-only message
+			cout << "interesting_planets (star) created." << endl; //debug-only message
 #endif
+			i++;
+		} while (i < interesting_planet_count);
 
 	}
 
@@ -41,9 +44,8 @@ Star::Star(const Star &s) {
 	diameter_km = s.diameter_km;
 
 	if (interesting_planet_count > 0) {
-		interesting_planets = new Planet[interesting_planet_count];
 		for (int i = 0; i < interesting_planet_count; i++) {
-			interesting_planets[i] = s.interesting_planets[i];
+			interesting_planets.push_back(s.interesting_planets[i]);
 		}
 
 #ifdef _DEBUG
@@ -63,7 +65,7 @@ Star::Star(const Star &s) {
 
 Star::~Star() {
 
-	delete []interesting_planets;
+	interesting_planets.clear();
 
 #ifdef _DEBUG
 	cout << "interesting_planets (star) deleted." << endl; //debug-only message

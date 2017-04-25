@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 class Star;
 class Planet;
 class Moon;
@@ -22,6 +23,6 @@ protected:
 
 	static Star Proxima_Centauri;
 	Star sol;
-	Planet *inhabited_planet;
-	Moon *interesting_moon;
+	std::vector<Planet>inhabited_planet;
+	std::vector <Moon> interesting_moon;
 };
