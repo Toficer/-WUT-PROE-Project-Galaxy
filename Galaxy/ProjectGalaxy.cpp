@@ -45,7 +45,6 @@ ostream& operator <<(ostream &aout, AstronomicalObject &a) {
 
 int main() {
 
-	int pause;
 	{
 		vector <AstronomicalObject*> objects;
 		Galaxy galaxy;
@@ -54,11 +53,29 @@ int main() {
 		objects.push_back(&galaxy);
 		objects.push_back(&cvoid);
 		objects.push_back(&sgalaxy);
-		cout << *objects[0] << endl;
-		cout << *objects[1] << endl;
-		cout << *objects[2] << endl;
+		//cout << *objects[0] << endl;
+		//cout << *objects[1] << endl;
+		//cout << *objects[2] << endl;
 	}
-	cin >> pause;
+
+	int endp = 0;
+	int option;
+
+	do {
+		cout << "What would you like to do?" << endl;
+		cout << "Input the chosen number and press enter." << endl;
+		cout << "[1] - display the number of existing objects" << endl;
+		cout << "[2] - save an object to a file" << endl;
+		cout << "[3] - read an object from a file" << endl;
+		cout << "[4] - output a string describing an existing object" << endl;
+		cout << "[5] - exit the program" << endl;
+		cin >> option;
+
+		if (option == 5) {
+			endp = 1;
+		};
+
+	} while (endp == 0);
 
 	return 0;
 }

@@ -116,6 +116,7 @@
     <ClCompile Include="AstronomicalObject.cpp" />
     <ClCompile Include="CosmicVoid.cpp" />
     <ClCompile Include="Galaxy.cpp" />
+    <ClCompile Include="Interface.cpp" />
     <ClCompile Include="Moon.cpp" />
     <ClCompile Include="Planet.cpp" />
     <ClCompile Include="ProjectGalaxy.cpp" />
