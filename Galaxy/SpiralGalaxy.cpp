@@ -12,7 +12,7 @@ string SpiralGalaxy::toString() {
 	std::string s2 = std::to_string(star_count);
 	std::string s3 = std::to_string(galaxy_age);
 	std::string s4 = std::to_string(number_of_arms);
-	return ("Diameter (ly): " + s1 + ", " + "Star count: " + s2 + " " + "Age: " + s3 + " " + "Arms: " + s4);
+	return (s1 + "\n" + s2 + "\n" + s3 + "\n" + s4);
 }
 
 

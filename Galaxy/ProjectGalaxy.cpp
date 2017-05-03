@@ -37,6 +37,12 @@ ostream& operator <<(ostream &sgout, SpiralGalaxy &sg) {
 	return sgout;
 }
 
+ostream& operator <<(ostream &aout, AstronomicalObject &a) {
+	string output = a.toString();
+	aout << output;
+	return aout;
+}
+
 int main() {
 
 	int pause;
@@ -48,9 +54,9 @@ int main() {
 		objects.push_back(&galaxy);
 		objects.push_back(&cvoid);
 		objects.push_back(&sgalaxy);
-		cout << objects[0]->toString() << endl;
-		cout << objects[1]->toString() << endl;
-		cout << objects[2]->toString() << endl;
+		cout << *objects[0] << endl;
+		cout << *objects[1] << endl;
+		cout << *objects[2] << endl;
 	}
 	cin >> pause;
 

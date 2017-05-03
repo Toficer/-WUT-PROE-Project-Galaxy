@@ -5,15 +5,19 @@ class Star;
 class Planet;
 class Moon;
 
-
+/// Inherits from the "Galaxy" class.
 class SpiralGalaxy : public Galaxy
 {
 public:
 
+	///Main constructor.
 	SpiralGalaxy();
+	///Copy constructor.
 	SpiralGalaxy(const SpiralGalaxy &sg);
 
+	/// Output stream operator.
 	friend std::ostream& operator <<(std::ostream &sgout, SpiralGalaxy &sg);
+	/// Virtual method converting the object to a string.
 	virtual std::string toString();
 
 protected:

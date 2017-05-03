@@ -17,7 +17,7 @@ string Galaxy::toString() {
 	std::string s1 = std::to_string(diameter_ly);
 	std::string s2 = std::to_string(star_count);
 	std::string s3 = std::to_string(galaxy_age);
-	return ("Diameter (ly): " + s1 + ", " + "Star count: " + s2 + " " + "Age: " + s3);
+	return (s1 + "\n" + s2 + "\n" + s3);
 }
 
 //------------------------------------------------------------------------------------------NEXT CONSTRUCTOR

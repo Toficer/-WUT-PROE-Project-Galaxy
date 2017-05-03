@@ -2,12 +2,16 @@
 class Planet;
 #include <vector>
 
+///Part of a galaxy, has no operators.
 class Star
 {
 public:
 
+	///Main constructor.
 	Star();
+	///Copy constructor.
 	Star(const Star &s);
+	///Destructor.
 	~Star();
 
 private:
