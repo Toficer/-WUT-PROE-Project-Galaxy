@@ -12,16 +12,17 @@ string SpiralGalaxy::toString() {
 	std::string s2 = std::to_string(star_count);
 	std::string s3 = std::to_string(galaxy_age);
 	std::string s4 = std::to_string(number_of_arms);
-	return (s1 + "\n" + s2 + "\n" + s3 + "\n" + s4);
+	std::string s5 = std::to_string(3);
+	return (s5 + "\n" + s1 + "\n" + s2 + "\n" + s3 + "\n" + s4);
 }
 
 
 //------------------------------------------------------------------------------------------NEXT CONSTRUCTOR
 
 
-SpiralGalaxy::SpiralGalaxy() {
+SpiralGalaxy::SpiralGalaxy(int number_of_arms) {
 
-	number_of_arms = 6;
+	this->number_of_arms = number_of_arms;
 
 #ifdef _DEBUG
 	cout << "Spiral galaxy created." << endl;

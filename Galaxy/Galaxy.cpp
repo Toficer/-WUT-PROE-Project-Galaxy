@@ -17,15 +17,16 @@ string Galaxy::toString() {
 	std::string s1 = std::to_string(diameter_ly);
 	std::string s2 = std::to_string(star_count);
 	std::string s3 = std::to_string(galaxy_age);
-	return (s1 + "\n" + s2 + "\n" + s3);
+	std::string s4 = std::to_string(2);
+	return (s4 + "\n" + s1 + "\n" + s2 + "\n" + s3);
 }
 
 //------------------------------------------------------------------------------------------NEXT CONSTRUCTOR
 
 
-Galaxy::Galaxy() {
+Galaxy::Galaxy(int galaxy_age) {
 
-	galaxy_age = 13700;
+	this->galaxy_age = galaxy_age;
 
 	inhabited_planet.push_back(Planet());
 

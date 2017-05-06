@@ -7,6 +7,7 @@ string CosmicVoid::toString() {
 	std::string s1 = std::to_string(diameter_ly);
 	std::string s2 = std::to_string(star_count);
 	std::string s3;
+	std::string s4 = std::to_string(1);
 		if (alien_presence) {
 			s3 = "1";
 		}
@@ -14,7 +15,7 @@ string CosmicVoid::toString() {
 			s3 = "0";
 		}
 
-	return (s1 + "\n" + s2 + "\n" + s3);
+	return (s4 + "\n" + s1 + "\n" + s2 + "\n" + s3);
 }
 
 CosmicVoid::CosmicVoid(const CosmicVoid &c)

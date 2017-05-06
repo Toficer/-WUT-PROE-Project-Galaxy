@@ -8,6 +8,7 @@
 #include "CosmicVoid.h"
 #include "SpiralGalaxy.h"
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -59,6 +60,42 @@ void writeString(int x, vector <AstronomicalObject*> objects) {
 	cout << endl << *objects[x] << endl << endl;
 }
 
+void writeToFile(int x, string name, vector <AstronomicalObject*> objects) {
+	if (x >= objects.size()) {
+		throw string("\n\nThere is no object of that number.\n\n");
+	}
+
+	ofstream output;
+	output.open(name);
+	output << *objects[x];
+}
+
+void readFromFile(string name, vector <AstronomicalObject*> objects) {
+	int s1=0, s2=0, s3=0, s4=0;
+
+	ifstream input;
+	input.open(name);
+
+	if (!input.is_open()) {
+		throw string("\n\nFile doesn't exist or couldn't be accessed.\n\n");
+	}
+
+	input >> s1;
+
+	if (s1 == 1) {
+		input >> s1 >> s2 >> s3;
+		cout << "Creating a cosmic void." << endl;
+	}
+	else if (s1 == 2) {
+		input >> s1 >> s2 >> s3;
+		cout << "Creating a galaxy." << endl;
+	}
+	else if (s1 == 3) {
+		input >> s1 >> s2 >> s3;
+		cout << "Creating a spiral galaxy." << endl;
+	}
+}
+
 int main() {
 
 		vector <AstronomicalObject*> objects;
@@ -74,6 +111,7 @@ int main() {
 
 	int endp = 0;
 	int option = 0, x;
+	string name;
 
 	do {
 		cout << "What would you like to do?" << endl;
@@ -108,6 +146,25 @@ int main() {
 
 		else if (option == 1) {
 			cout << "\n\nCurrently there are " << objects.size() << " objects in the container.\n\n" << endl;
+		}
+
+		else if (option == 2) {
+			cout << "Please enter the object's number." << endl;
+			cin >> x;
+			cout << "Please enter the desired file name ending with \".txt\"." << endl;
+			cin >> name;
+			writeToFile(x, name, objects);
+		}
+
+		else if (option == 3) {
+			cout << "Please enter the file name ending with \".txt\"." << endl;
+			cin >> name;
+			try {
+				readFromFile(name, objects);
+			}
+			catch (string err) {
+				cout << err << endl;
+			}
 		}
 
 		cin.clear();

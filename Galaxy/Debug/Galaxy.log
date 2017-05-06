@@ -1,4 +1,5 @@
 ﻿  ProjectGalaxy.cpp
-c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(56): warning C4018: '>=': signed/unsigned mismatch
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(57): warning C4018: '>=': signed/unsigned mismatch
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(64): warning C4018: '>=': signed/unsigned mismatch
   Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Debug\Galaxy.exe
   Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Debug\Galaxy.pdb (Partial PDB)

@@ -3,10 +3,10 @@
 #include "AstronomicalObject.h"
 using namespace std;
 
-AstronomicalObject::AstronomicalObject(int star_count) {
+AstronomicalObject::AstronomicalObject(int star_count, int diameter_ly) {
 
 	this->star_count = star_count;
-	diameter_ly = 150000;
+	this->diameter_ly = diameter_ly;
 
 #ifdef _DEBUG
 	cout << "Astronomical object created." << endl;

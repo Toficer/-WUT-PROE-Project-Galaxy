@@ -6,7 +6,7 @@ class CosmicVoid : public AstronomicalObject
 {
 public:
 	///Main constructor, forces the parent class to be created with 0 stars.
-	CosmicVoid() : AstronomicalObject(0)
+	CosmicVoid() : AstronomicalObject(0, 150000)
 	{
 		using namespace std;
 
