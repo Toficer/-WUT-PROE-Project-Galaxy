@@ -43,9 +43,24 @@ ostream& operator <<(ostream &aout, AstronomicalObject &a) {
 	return aout;
 }
 
+//Interface functions and exception handling
+
+void setOption(int &x) {
+	cin >> x;
+	if (x != 5 && x != 4 && x != 3 && x != 2 && x != 1) {
+		throw string("\n\nIncorrect input, please enter an integer between 1 and 5.\n\n");
+	}
+}
+
+void writeString(int x, vector <AstronomicalObject*> objects) {
+	if (x >= objects.size()) {
+		throw string("\n\nThere is no object of that number.\n\n");
+	}
+	cout << endl << *objects[x] << endl << endl;
+}
+
 int main() {
 
-	{
 		vector <AstronomicalObject*> objects;
 		Galaxy galaxy;
 		CosmicVoid cvoid;
@@ -56,24 +71,47 @@ int main() {
 		//cout << *objects[0] << endl;
 		//cout << *objects[1] << endl;
 		//cout << *objects[2] << endl;
-	}
 
 	int endp = 0;
-	int option;
+	int option = 0, x;
 
 	do {
 		cout << "What would you like to do?" << endl;
-		cout << "Input the chosen number and press enter." << endl;
+		cout << "Enter the chosen number and press enter." << endl;
 		cout << "[1] - display the number of existing objects" << endl;
 		cout << "[2] - save an object to a file" << endl;
 		cout << "[3] - read an object from a file" << endl;
 		cout << "[4] - output a string describing an existing object" << endl;
 		cout << "[5] - exit the program" << endl;
-		cin >> option;
+
+		try {
+			setOption(option);
+		}
+		catch (string err) {
+			cout << err << endl;
+		}
 
 		if (option == 5) {
 			endp = 1;
-		};
+		}
+
+		else if (option == 4) {
+			cout << "Please enter the object's number." << endl;
+			cin >> x;
+			try {
+				writeString(x, objects);
+			}
+			catch (string err) {
+				cout << err << endl;
+			}
+		}
+
+		else if (option == 1) {
+			cout << "\n\nCurrently there are " << objects.size() << " objects in the container.\n\n" << endl;
+		}
+
+		cin.clear();
+		cin.ignore(100, '\n');
 
 	} while (endp == 0);
 

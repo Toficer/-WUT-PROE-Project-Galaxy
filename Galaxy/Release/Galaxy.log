@@ -1,9 +1,7 @@
-﻿  Interface.cpp
-  ProjectGalaxy.cpp
+﻿  ProjectGalaxy.cpp
   Generating code
-  2 of 332 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+  31 of 338 functions ( 9.2%) were compiled, the rest were copied from previous compilation.
+    9 functions were new in current compilation
+    25 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  Galaxy.vcxproj -> C:\Users\tofic\Documents\Visual Studio 2015\Projects\Galaxy\Release\Galaxy.exe
-  Galaxy.vcxproj -> C:\Users\tofic\Documents\Visual Studio 2015\Projects\Galaxy\Release\Galaxy.pdb (Full PDB)
+LINK : fatal error LNK1201: error writing to program database 'C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Release\Galaxy.pdb'; check for insufficient disk space, invalid path, or insufficient privilege
