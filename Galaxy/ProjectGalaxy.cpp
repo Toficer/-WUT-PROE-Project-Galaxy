@@ -45,21 +45,21 @@ ostream& operator <<(ostream &aout, AstronomicalObject &a) {
 }
 
 //Interface functions and exception handling
-
+///Choosing the option.
 void setOption(int &x) {
 	cin >> x;
 	if (x != 5 && x != 4 && x != 3 && x != 2 && x != 1) {
 		throw string("\n\nIncorrect input, please enter an integer between 1 and 5.\n\n");
 	}
 }
-
+///Outputing a string describing an object.
 void writeString(int x, vector <AstronomicalObject*> objects) {
 	if (x >= objects.size()) {
 		throw string("\n\nThere is no object of that number.\n\n");
 	}
 	cout << endl << *objects[x] << endl << endl;
 }
-
+///Saving an object to a file.
 void writeToFile(int x, string name, vector <AstronomicalObject*> &objects) {
 	if (x >= objects.size()) {
 		throw string("\n\nThere is no object of that number.\n\n");
@@ -69,7 +69,7 @@ void writeToFile(int x, string name, vector <AstronomicalObject*> &objects) {
 	output.open(name);
 	output << *objects[x];
 }
-
+///Reading an object from a file.
 void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 	int s1=0, s2=0, s3=0, s4=0;
 
@@ -101,7 +101,7 @@ void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 		objects.push_back(temp);
 	}
 }
-
+///Main program and the interface.
 int main() {
 
 		vector <AstronomicalObject*> objects;

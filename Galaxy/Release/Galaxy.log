@@ -1,7 +1,15 @@
-﻿  ProjectGalaxy.cpp
+﻿  AstronomicalObject.cpp
+  CosmicVoid.cpp
+  Galaxy.cpp
+  ProjectGalaxy.cpp
+ProjectGalaxy.cpp(57): warning C4018: '>=': signed/unsigned mismatch
+ProjectGalaxy.cpp(64): warning C4018: '>=': signed/unsigned mismatch
+ProjectGalaxy.cpp(88): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  SpiralGalaxy.cpp
   Generating code
-  31 of 338 functions ( 9.2%) were compiled, the rest were copied from previous compilation.
-    9 functions were new in current compilation
-    25 functions had inline decision re-evaluated but remain unchanged
+  179 of 464 functions (38.6%) were compiled, the rest were copied from previous compilation.
+    128 functions were new in current compilation
+    40 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-LINK : fatal error LNK1201: error writing to program database 'C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Release\Galaxy.pdb'; check for insufficient disk space, invalid path, or insufficient privilege
+  Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Release\Galaxy.exe
+  Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Release\Galaxy.pdb (Full PDB)
