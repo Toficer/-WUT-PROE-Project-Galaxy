@@ -60,7 +60,7 @@ void writeString(int x, vector <AstronomicalObject*> objects) {
 	cout << endl << *objects[x] << endl << endl;
 }
 
-void writeToFile(int x, string name, vector <AstronomicalObject*> objects) {
+void writeToFile(int x, string name, vector <AstronomicalObject*> &objects) {
 	if (x >= objects.size()) {
 		throw string("\n\nThere is no object of that number.\n\n");
 	}
@@ -70,7 +70,7 @@ void writeToFile(int x, string name, vector <AstronomicalObject*> objects) {
 	output << *objects[x];
 }
 
-void readFromFile(string name, vector <AstronomicalObject*> objects) {
+void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 	int s1=0, s2=0, s3=0, s4=0;
 
 	ifstream input;
@@ -85,14 +85,20 @@ void readFromFile(string name, vector <AstronomicalObject*> objects) {
 	if (s1 == 1) {
 		input >> s1 >> s2 >> s3;
 		cout << "Creating a cosmic void." << endl;
+		CosmicVoid *temp = new CosmicVoid(s3); //only s3 differs.
+		objects.push_back(temp);
 	}
 	else if (s1 == 2) {
 		input >> s1 >> s2 >> s3;
 		cout << "Creating a galaxy." << endl;
+		Galaxy *temp = new Galaxy(s1, s2, s3);
+		objects.push_back(temp);
 	}
 	else if (s1 == 3) {
-		input >> s1 >> s2 >> s3;
+		input >> s1 >> s2 >> s3 >> s4;
 		cout << "Creating a spiral galaxy." << endl;
+		SpiralGalaxy *temp = new SpiralGalaxy(s1, s2, s3, s4);
+		objects.push_back(temp);
 	}
 }
 

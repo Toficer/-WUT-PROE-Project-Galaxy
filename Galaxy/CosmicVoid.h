@@ -6,11 +6,11 @@ class CosmicVoid : public AstronomicalObject
 {
 public:
 	///Main constructor, forces the parent class to be created with 0 stars.
-	CosmicVoid() : AstronomicalObject(0, 150000)
+	CosmicVoid(bool alien_presence = 0) : AstronomicalObject(0, 150000)
 	{
 		using namespace std;
 
-		alien_presence = false;
+		this->alien_presence = alien_presence;
 
 		#ifdef _DEBUG
 				cout << "Cosmic void created." << endl;

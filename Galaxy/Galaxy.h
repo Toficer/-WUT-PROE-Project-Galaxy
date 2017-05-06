@@ -11,7 +11,7 @@ class Galaxy: public AstronomicalObject
 public:
 
 	///Main constructor.
-	Galaxy(int galaxy_age = 13700);
+	Galaxy(int diameter_ly = 150000, int star_count = 317000, int galaxy_age = 13700);
 	///Copy constructor.
 	Galaxy(const Galaxy &g);
 	///Destructor.

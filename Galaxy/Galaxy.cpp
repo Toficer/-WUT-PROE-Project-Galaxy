@@ -24,9 +24,11 @@ string Galaxy::toString() {
 //------------------------------------------------------------------------------------------NEXT CONSTRUCTOR
 
 
-Galaxy::Galaxy(int galaxy_age) {
+Galaxy::Galaxy(int diameter_ly, int star_count, int galaxy_age) {
 
 	this->galaxy_age = galaxy_age;
+	this->diameter_ly = diameter_ly;
+	this->star_count = star_count;
 
 	inhabited_planet.push_back(Planet());
 

@@ -11,7 +11,7 @@ class SpiralGalaxy : public Galaxy
 public:
 
 	///Main constructor.
-	SpiralGalaxy(int number_of_arms = 6);
+	SpiralGalaxy(int diameter_ly = 150000, int star_count = 317000, int galaxy_age = 13700, int number_of_arms = 6);
 	///Copy constructor.
 	SpiralGalaxy(const SpiralGalaxy &sg);
 

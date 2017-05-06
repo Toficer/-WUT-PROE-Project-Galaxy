@@ -20,9 +20,12 @@ string SpiralGalaxy::toString() {
 //------------------------------------------------------------------------------------------NEXT CONSTRUCTOR
 
 
-SpiralGalaxy::SpiralGalaxy(int number_of_arms) {
+SpiralGalaxy::SpiralGalaxy(int diameter_ly, int star_count, int galaxy_age, int number_of_arms) {
 
 	this->number_of_arms = number_of_arms;
+	this->galaxy_age = galaxy_age;
+	this->diameter_ly = diameter_ly;
+	this->star_count = star_count;
 
 #ifdef _DEBUG
 	cout << "Spiral galaxy created." << endl;
