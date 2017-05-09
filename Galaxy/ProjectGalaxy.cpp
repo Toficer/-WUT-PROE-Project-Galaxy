@@ -9,6 +9,7 @@
 #include "SpiralGalaxy.h"
 #include <vector>
 #include <fstream>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -57,6 +58,7 @@ void writeString(int x, vector <AstronomicalObject*> objects) {
 	if (x >= objects.size()) {
 		throw string("\n\nThere is no object of that number.\n\n");
 	}
+	system("cls");
 	cout << endl << *objects[x] << endl << endl;
 }
 ///Saving an object to a file.
@@ -68,6 +70,8 @@ void writeToFile(int x, string name, vector <AstronomicalObject*> &objects) {
 	ofstream output;
 	output.open(name);
 	output << *objects[x];
+	system("cls");
+	cout << "\n\nObject saved to the file: " << name << ".\n\n" << endl;
 }
 ///Reading an object from a file.
 void readFromFile(string name, vector <AstronomicalObject*> &objects) {
@@ -84,21 +88,27 @@ void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 
 	if (s1 == 1) {
 		input >> s1 >> s2 >> s3;
-		cout << "Creating a cosmic void." << endl;
+		system("cls");
+		cout << "\n\nCreating a cosmic void.\n\n" << endl;
 		CosmicVoid *temp = new CosmicVoid(s3); //only s3 differs.
 		objects.push_back(temp);
 	}
 	else if (s1 == 2) {
 		input >> s1 >> s2 >> s3;
-		cout << "Creating a galaxy." << endl;
+		system("cls");
+		cout << "\n\nCreating a galaxy.\n\n" << endl;
 		Galaxy *temp = new Galaxy(s1, s2, s3);
 		objects.push_back(temp);
 	}
 	else if (s1 == 3) {
+		system("cls");
 		input >> s1 >> s2 >> s3 >> s4;
-		cout << "Creating a spiral galaxy." << endl;
+		cout << "\n\nCreating a spiral galaxy.\n\n" << endl;
 		SpiralGalaxy *temp = new SpiralGalaxy(s1, s2, s3, s4);
 		objects.push_back(temp);
+	}
+	else {
+		throw string("\n\nFile doesn't contain a recognized object.\n\n");
 	}
 }
 ///Main program and the interface.
@@ -132,6 +142,7 @@ int main() {
 			setOption(option);
 		}
 		catch (string err) {
+			system("cls");
 			cout << err << endl;
 		}
 
@@ -146,11 +157,13 @@ int main() {
 				writeString(x, objects);
 			}
 			catch (string err) {
+				system("cls");
 				cout << err << endl;
 			}
 		}
 
 		else if (option == 1) {
+			system("cls");
 			cout << "\n\nCurrently there are " << objects.size() << " objects in the container.\n\n" << endl;
 		}
 
@@ -159,7 +172,13 @@ int main() {
 			cin >> x;
 			cout << "Please enter the desired file name ending with \".txt\"." << endl;
 			cin >> name;
-			writeToFile(x, name, objects);
+			try {
+				writeToFile(x, name, objects);
+			}
+			catch (string err) {
+				system("cls");
+				cout << err << endl;
+			}
 		}
 
 		else if (option == 3) {
@@ -169,6 +188,7 @@ int main() {
 				readFromFile(name, objects);
 			}
 			catch (string err) {
+				system("cls");
 				cout << err << endl;
 			}
 		}
