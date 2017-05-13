@@ -49,7 +49,7 @@ ostream& operator <<(ostream &aout, AstronomicalObject &a) {
 ///Choosing the option.
 void setOption(int &x) {
 	cin >> x;
-	if (x != 5 && x != 4 && x != 3 && x != 2 && x != 1) {
+	if (x != 7 && x != 6 && x != 5 && x != 4 && x != 3 && x != 2 && x != 1) {
 		throw string("\n\nIncorrect input, please enter an integer between 1 and 5.\n\n");
 	}
 }
@@ -58,7 +58,6 @@ void writeString(int x, vector <AstronomicalObject*> objects) {
 	if (x >= objects.size()) {
 		throw string("\n\nThere is no object of that number.\n\n");
 	}
-	system("cls");
 	cout << endl << *objects[x] << endl << endl;
 }
 ///Saving an object to a file.
@@ -146,7 +145,8 @@ int main() {
 		cout << "[3] - read an object from a file" << endl;
 		cout << "[4] - delete the last object in the container" << endl;
 		cout << "[5] - output a string describing an existing object" << endl;
-		cout << "[6] - exit the program" << endl;
+		cout << "[6] - output a string describing all objects currently in the container" << endl;
+		cout << "[7] - exit the program" << endl;
 
 		try {
 			setOption(option);
@@ -156,7 +156,7 @@ int main() {
 			cout << err << endl;
 		}
 
-		if (option == 6) {
+		if (option == 7) {
 			endp = 1;
 		}
 
@@ -164,11 +164,26 @@ int main() {
 			cout << "Please enter the object's number." << endl;
 			cin >> x;
 			try {
+				system("cls");
 				writeString(x, objects);
 			}
 			catch (string err) {
 				system("cls");
 				cout << err << endl;
+			}
+		}
+
+		else if (option == 6) {
+			system("cls");
+			cout << "\n\nCurrently there are " << objects.size() << " objects in the container:\n\n" << endl;
+			for (x = 0; x < objects.size(); x++) {
+				try {
+					writeString(x, objects);
+				}
+				catch (string err) {
+					system("cls");
+					cout << err << endl;
+				}
 			}
 		}
 
