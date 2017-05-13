@@ -111,6 +111,15 @@ void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 		throw string("\n\nFile doesn't contain a recognized object.\n\n");
 	}
 }
+///Deleting an object.
+void deleteObject(vector <AstronomicalObject*> &objects) {
+	if (objects.size() == 0) {
+		throw string("\n\nThere are no objects in the container.\n\n");
+	}
+	objects.pop_back();
+	system("cls");
+	cout << "\n\nObject deleted.\n\n" << endl;
+}
 ///Main program and the interface.
 int main() {
 
@@ -135,8 +144,9 @@ int main() {
 		cout << "[1] - display the number of existing objects" << endl;
 		cout << "[2] - save an object to a file" << endl;
 		cout << "[3] - read an object from a file" << endl;
-		cout << "[4] - output a string describing an existing object" << endl;
-		cout << "[5] - exit the program" << endl;
+		cout << "[4] - delete the last object in the container" << endl;
+		cout << "[5] - output a string describing an existing object" << endl;
+		cout << "[6] - exit the program" << endl;
 
 		try {
 			setOption(option);
@@ -146,15 +156,25 @@ int main() {
 			cout << err << endl;
 		}
 
-		if (option == 5) {
+		if (option == 6) {
 			endp = 1;
 		}
 
-		else if (option == 4) {
+		else if (option == 5) {
 			cout << "Please enter the object's number." << endl;
 			cin >> x;
 			try {
 				writeString(x, objects);
+			}
+			catch (string err) {
+				system("cls");
+				cout << err << endl;
+			}
+		}
+
+		else if (option == 4) {
+			try {
+				deleteObject(objects);
 			}
 			catch (string err) {
 				system("cls");
