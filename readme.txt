@@ -1,8 +1,9 @@
-Project Galaxy, v. 1.0
+Project Galaxy, v. 1.1
 
 Abstract class: "AstronomicalObject"
-Virtual method: "toString()"
-Saving and reading objects implemented incorrectly.
+Virtual method: "detType()"
+Saving and reading objects fixed.
+Interface finished.
 
 Rafał Raczyński,
 WUT EiTI
