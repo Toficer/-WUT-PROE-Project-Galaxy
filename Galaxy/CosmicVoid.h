@@ -1,4 +1,5 @@
 #pragma once
+#include <fstream>
 class AstronomicalObject;
 
 ///Inherits from the "AstronomicalObject" class.
@@ -23,7 +24,12 @@ public:
 	///Output stream operator.
 	friend std::ostream& operator <<(std::ostream &vout, CosmicVoid &v);
 	///Virtual method converting the object to a string.
-	virtual std::string toString();
+	std::string toString();
+	///Determining object type.
+	virtual std::string detType();
+	///Reading from file;
+	virtual void readString(std::ifstream& input);
+
 
 private:
 	bool alien_presence;

@@ -1,4 +1,5 @@
 #pragma once
+#include <fstream>
 class AstronomicalObject;
 class Galaxy;
 class Star;
@@ -18,7 +19,11 @@ public:
 	/// Output stream operator.
 	friend std::ostream& operator <<(std::ostream &sgout, SpiralGalaxy &sg);
 	/// Virtual method converting the object to a string.
-	virtual std::string toString();
+	std::string toString();
+	///Determining object type.
+	virtual std::string detType();
+	///Reading from file;
+	virtual void readString(std::ifstream& input);
 
 protected:
 	int number_of_arms;

@@ -5,15 +5,27 @@
 #include "AstronomicalObject.h"
 #include "Galaxy.h"
 #include "SpiralGalaxy.h"
+#include <fstream>
 using namespace std;
 
 string SpiralGalaxy::toString() {
-	std::string s1 = std::to_string(diameter_ly);
-	std::string s2 = std::to_string(star_count);
-	std::string s3 = std::to_string(galaxy_age);
-	std::string s4 = std::to_string(number_of_arms);
+	std::string s1 = Galaxy::toString();
+	s1.erase(0, 2);
+	std::string s2 = std::to_string(number_of_arms);
+	std::string s0 = detType();
+	return (s0 + "\n" + s1  + "\n" + s2);
+}
+
+string SpiralGalaxy::detType() {
 	std::string s5 = std::to_string(3);
-	return (s5 + "\n" + s1 + "\n" + s2 + "\n" + s3 + "\n" + s4);
+	return (s5);
+}
+
+void SpiralGalaxy::readString(ifstream& input) {
+	Galaxy::readString(input);
+	int s1 = 0;
+	input >> s1;
+	this->number_of_arms = s1;
 }
 
 

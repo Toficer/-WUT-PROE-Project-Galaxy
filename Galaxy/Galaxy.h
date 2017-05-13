@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <fstream>
 class Star;
 class Planet;
 class Moon;
@@ -20,6 +21,10 @@ public:
 	friend std::ostream& operator <<(std::ostream &gout, Galaxy &g);
 	///Virtual method converting the object to a string.
 	virtual std::string toString();
+	///Determining object type.
+	virtual std::string detType();
+	///Reading from file;
+	virtual void readString(std::ifstream& input);
 
 protected:
 	int galaxy_age; //in M Earth ears

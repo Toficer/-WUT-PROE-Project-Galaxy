@@ -87,24 +87,24 @@ void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 	input >> s1;
 
 	if (s1 == 1) {
-		input >> s1 >> s2 >> s3;
 		system("cls");
 		cout << "\n\nCreating a cosmic void.\n\n" << endl;
-		CosmicVoid *temp = new CosmicVoid(s3); //only s3 differs.
+		CosmicVoid *temp = new CosmicVoid();
+		temp[0].readString(input);
 		objects.push_back(temp);
 	}
 	else if (s1 == 2) {
-		input >> s1 >> s2 >> s3;
 		system("cls");
 		cout << "\n\nCreating a galaxy.\n\n" << endl;
-		Galaxy *temp = new Galaxy(s1, s2, s3);
+		Galaxy *temp = new Galaxy();
+		temp[0].readString(input);
 		objects.push_back(temp);
 	}
 	else if (s1 == 3) {
 		system("cls");
-		input >> s1 >> s2 >> s3 >> s4;
 		cout << "\n\nCreating a spiral galaxy.\n\n" << endl;
-		SpiralGalaxy *temp = new SpiralGalaxy(s1, s2, s3, s4);
+		SpiralGalaxy *temp = new SpiralGalaxy();
+		temp[0].readString(input);
 		objects.push_back(temp);
 	}
 	else {

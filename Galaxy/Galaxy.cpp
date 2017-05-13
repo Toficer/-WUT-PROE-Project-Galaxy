@@ -5,6 +5,7 @@
 #include "AstronomicalObject.h"
 #include "Galaxy.h"
 #include <vector>
+#include <fstream>
 using namespace std;
 
 int Galaxy::galaxy_count = 0;
@@ -14,11 +15,22 @@ int Galaxy::countGalaxies() {
 }
 
 string Galaxy::toString() {
-	std::string s1 = std::to_string(diameter_ly);
-	std::string s2 = std::to_string(star_count);
-	std::string s3 = std::to_string(galaxy_age);
+	std::string s1 = AstronomicalObject::toString();
+	std::string s2 = std::to_string(galaxy_age);
+	std::string s0 = detType();
+	return (s0 + "\n" + s1 + "\n" + s2);
+}
+
+string Galaxy::detType() {
 	std::string s4 = std::to_string(2);
-	return (s4 + "\n" + s1 + "\n" + s2 + "\n" + s3);
+	return (s4);
+}
+
+void Galaxy::readString(ifstream& input) {
+	AstronomicalObject::readString(input);
+	int s1 = 0;
+	input >> s1;
+	this->galaxy_age = s1;
 }
 
 //------------------------------------------------------------------------------------------NEXT CONSTRUCTOR

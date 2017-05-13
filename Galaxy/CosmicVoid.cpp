@@ -1,22 +1,35 @@
 #include <iostream>
 #include "AstronomicalObject.h"
 #include "CosmicVoid.h"
+#include <fstream>
 using namespace std;
 
 string CosmicVoid::toString() {
-	std::string s1 = std::to_string(diameter_ly);
-	std::string s2 = std::to_string(star_count);
-	std::string s3;
-	std::string s4 = std::to_string(1);
+	std::string s1 = AstronomicalObject::toString();
+	std::string s2;
+	std::string s0 = detType();
 		if (alien_presence) {
-			s3 = "1";
+			s2 = "1";
 		}
 		else {
-			s3 = "0";
+			s2 = "0";
 		}
 
-	return (s4 + "\n" + s1 + "\n" + s2 + "\n" + s3);
+	return (s0 + "\n" + s1 + "\n" + s2);
 }
+
+string CosmicVoid::detType() {
+	std::string s4 = std::to_string(1);
+	return (s4);
+}
+
+void CosmicVoid::readString(ifstream& input) {
+	AstronomicalObject::readString(input);
+	int s1 = 0;
+	input >> s1;
+	this->alien_presence = s1;
+}
+
 
 CosmicVoid::CosmicVoid(const CosmicVoid &c)
 {
