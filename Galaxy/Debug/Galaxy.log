@@ -1,6 +1,13 @@
-﻿  ProjectGalaxy.cpp
-c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(57): warning C4018: '>=': signed/unsigned mismatch
-c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(64): warning C4018: '>=': signed/unsigned mismatch
-c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(88): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+﻿  SpiralGalaxy.cpp
+  ProjectGalaxy.cpp
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(59): warning C4018: '>=': signed/unsigned mismatch
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(66): warning C4018: '>=': signed/unsigned mismatch
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(153): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\projectgalaxy.cpp(291): warning C4018: '<': signed/unsigned mismatch
+  Galaxy.cpp
+  CosmicVoid.cpp
+c:\users\tofic\documents\visual studio 2015\projects\galaxy\galaxy\cosmicvoid.cpp(30): warning C4800: 'int': forcing value to bool 'true' or 'false' (performance warning)
+  AstronomicalObject.cpp
+  Generating Code...
   Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Debug\Galaxy.exe
   Galaxy.vcxproj -> C:\Users\tofic\documents\visual studio 2015\Projects\Galaxy\Debug\Galaxy.pdb (Partial PDB)

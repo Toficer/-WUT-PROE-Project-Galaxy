@@ -10,6 +10,7 @@
 #include <vector>
 #include <fstream>
 #include <stdlib.h>
+#include <limits>
 
 using namespace std;
 
@@ -49,7 +50,7 @@ ostream& operator <<(ostream &aout, AstronomicalObject &a) {
 ///Choosing the option.
 void setOption(int &x) {
 	cin >> x;
-	if (x != 7 && x != 6 && x != 5 && x != 4 && x != 3 && x != 2 && x != 1) {
+	if (x != 8 && x != 7 && x != 6 && x != 5 && x != 4 && x != 3 && x != 2 && x != 1) {
 		throw string("\n\nIncorrect input, please enter an integer between 1 and 5.\n\n");
 	}
 }
@@ -71,10 +72,11 @@ void writeToFile(int x, string name, vector <AstronomicalObject*> &objects) {
 	output << *objects[x];
 	system("cls");
 	cout << "\n\nObject saved to the file: " << name << ".\n\n" << endl;
+	output.close();
 }
 ///Reading an object from a file.
 void readFromFile(string name, vector <AstronomicalObject*> &objects) {
-	int s1=0, s2=0, s3=0, s4=0;
+	int s1 = 0;
 
 	ifstream input;
 	input.open(name);
@@ -109,6 +111,7 @@ void readFromFile(string name, vector <AstronomicalObject*> &objects) {
 	else {
 		throw string("\n\nFile doesn't contain a recognized object.\n\n");
 	}
+	input.close();
 }
 ///Deleting an object.
 void deleteObject(vector <AstronomicalObject*> &objects) {
@@ -118,6 +121,103 @@ void deleteObject(vector <AstronomicalObject*> &objects) {
 	objects.pop_back();
 	system("cls");
 	cout << "\n\nObject deleted.\n\n" << endl;
+}
+///Creating an object.
+void createObject(vector <AstronomicalObject*> &objects) {
+	int x=0;
+	cout << "What type of object would you like to create?." << endl;
+	cout << "[1] - cosmic void." << endl;
+	cout << "[2] - galaxy." << endl;
+	cout << "[3] - spiral galaxy." << endl;
+	cout << "[other] - cancel creation." << endl;
+	cin >> x;
+
+	if (x != 1 && x != 2 && x != 3) {
+		throw string("\n\nCreation aborted.\n\n");
+		return;
+	}
+
+	if (x == 1) {
+		system("cls");
+		int s1;
+		cout << "Are there aliens in the void?." << endl;
+		cout << "[0] - no, [other] - yes." << endl;
+		cin >> s1;
+
+		if (x != 1 && x != 0) {
+			throw string("\n\nIncorrect input, aborting.\n\n");
+			return;
+		}
+		system("cls");
+
+		CosmicVoid *temp = new CosmicVoid(s1);
+		objects.push_back(temp);
+		cout << "\n\nCreating a cosmic void.\n\n" << endl;
+	}
+
+	else if (x == 2) {
+		system("cls");
+		int s1, s2, s3;
+		cout << "What is your galaxy's diameter? (in ly)." << endl;
+		cin >> s1;
+		if (cin.fail() || s1 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		cout << "What is your galaxy's star count?" << endl;
+		cin >> s2;
+		if (cin.fail() || s2 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		cout << "How old is your galaxy? (in M years)" << endl;
+		cin >> s3;
+		if (cin.fail() || s3 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		system("cls");
+
+		Galaxy *temp = new Galaxy(s1, s2, s3);
+		objects.push_back(temp);
+		cout << "\n\nCreating a galaxy.\n\n" << endl;
+
+	}
+
+	else if (x == 3) {
+		system("cls");
+		int s1, s2, s3, s4;
+		cout << "What is your spiral galaxy's diameter? (in ly)." << endl;
+		cin >> s1;
+		if (cin.fail() || s1 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		cout << "What is your spiral galaxy's star count?" << endl;
+		cin >> s2;
+		if (cin.fail() || s2 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		cout << "How old is your spiral galaxy? (in M years)" << endl;
+		cin >> s3;
+		if (cin.fail() || s3 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		cout << "How many arms does your spiral galaxy have?" << endl;
+		cin >> s4;
+		if (cin.fail() || s4 < 0) {
+			throw string("\n\nIncorrect integer value, aborting.\n\n");
+			return;
+		}
+		system("cls");
+
+		SpiralGalaxy *temp = new SpiralGalaxy(s1, s2, s3, s4);
+		objects.push_back(temp);
+		cout << "\n\nCreating a spiral galaxy.\n\n" << endl;
+
+	}
 }
 ///Main program and the interface.
 int main() {
@@ -144,9 +244,10 @@ int main() {
 		cout << "[2] - save an object to a file" << endl;
 		cout << "[3] - read an object from a file" << endl;
 		cout << "[4] - delete the last object in the container" << endl;
-		cout << "[5] - output a string describing an existing object" << endl;
-		cout << "[6] - output a string describing all objects currently in the container" << endl;
-		cout << "[7] - exit the program" << endl;
+		cout << "[5] - create and add an object to the container" << endl;
+		cout << "[6] - output a string describing an existing object" << endl;
+		cout << "[7] - output a string describing all objects currently in the container" << endl;
+		cout << "[8] - exit the program" << endl;
 
 		try {
 			setOption(option);
@@ -156,11 +257,11 @@ int main() {
 			cout << err << endl;
 		}
 
-		if (option == 7) {
+		if (option == 8) {
 			endp = 1;
 		}
 
-		else if (option == 5) {
+		else if (option == 6) {
 			cout << "Please enter the object's number." << endl;
 			cin >> x;
 			try {
@@ -173,7 +274,18 @@ int main() {
 			}
 		}
 
-		else if (option == 6) {
+		else if (option == 5) {
+			try {
+				//system("cls");
+				createObject(objects);
+			}
+			catch (string err) {
+				system("cls");
+				cout << err << endl;
+			}
+		}
+
+		else if (option == 7) {
 			system("cls");
 			cout << "\n\nCurrently there are " << objects.size() << " objects in the container:\n\n" << endl;
 			for (x = 0; x < objects.size(); x++) {
