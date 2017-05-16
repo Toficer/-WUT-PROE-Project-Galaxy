@@ -23,7 +23,7 @@ public:
 	virtual std::string toString();
 	///Determining object type.
 	virtual std::string detType();
-	///Reading from file;
+	///Reading from file.
 	virtual void readString(std::ifstream& input);
 
 protected:

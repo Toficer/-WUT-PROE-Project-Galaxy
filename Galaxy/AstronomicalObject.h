@@ -12,7 +12,11 @@ public:
 	virtual std::string toString();
 	///Determining object type.
 	virtual std::string detType() = 0;
-	///Reading from file;
+	///Reading from file.
+	/*!
+		\param input is a file stream from which the string is read.
+		\return the function does not return anything.
+	*/
 	virtual void readString(std::ifstream& input);
 	///Output stream operator.
 	friend std::ostream& operator <<(std::ostream &aout, AstronomicalObject &a);
