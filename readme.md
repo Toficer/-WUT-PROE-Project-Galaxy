@@ -3,3 +3,5 @@
 This assignment was designed to help students learn the basics of OOP. This repo contains the first two stages, the end result of which allows the user to create and manage various astronomical objects through a simple CLI.
 
 Objects are persisted in a text file.
+
+As a "bonus objective" the students were encouraged to host this project on GitHub, to familiarize them with the concept of version control.
